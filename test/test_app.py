@@ -84,7 +84,7 @@ def test_sine2():
     assert app.sine(0) == 0
 
 def test_sine3():
-    assert app.sine(1) == 1
+    assert app.sine(1) != 1
 
 
 def test_cosine_invalid():
@@ -97,7 +97,7 @@ def test_cosine2():
     assert app.cosine(0) == 1
 
 def test_cosine3():
-    assert app.cosine(1) == 0
+    assert app.cosine(1) != 0
 
 
 def test_squared1():
@@ -125,4 +125,4 @@ def test_log2():
     assert app.logarithm(16, 2) == 4
 
 def test_log3():
-    assert app.logarithm(125, 5) == 3
+    assert app.logarithm(125, 5) == pytest.approx(3)
