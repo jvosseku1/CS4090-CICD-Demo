@@ -5,6 +5,7 @@ root = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(root/"src"))
 
 import app
+import math
 
 def test_add():
     assert add(5, 6) == 11
@@ -33,10 +34,21 @@ def test_mult3():
 def test_div1():
     if b == 0:
         raise ValueError("b cannot be 0\n nothing divisible by 0")
+    else:
 
-def test_div2():
-    assert div(10/2) == 5
+        def test_div2():
+            assert div(10, 2) == 5
 
-def test_div3():
-    assert div(100/10) == 10
+        def test_div3():
+            assert div(100, 10) == 10
 
+def test_percent1():
+    if a > b:
+        raise ValueError("a cannot be greater than b")
+    elif ((a < 0 or a > 100) or (b < 0 or b > 100)):
+        raise ValueError("a and b must be between 0 and 100")
+    else:
+        def test_percent2():
+            assert percent(10, 100) == 10
+        
+        def test_percent3():
